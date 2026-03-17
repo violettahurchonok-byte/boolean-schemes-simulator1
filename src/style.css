@@ -18,6 +18,9 @@ h1 {
   padding: 8px;
   width: 300px;
   margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 #controls button {
@@ -29,10 +32,15 @@ h1 {
   background-color: #4CAF50;
   color: white;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 #controls button:hover {
   background-color: #45a049;
+}
+
+#controls button:active {
+  background-color: #3d8b40;
 }
 
 #workspace {
@@ -41,26 +49,37 @@ h1 {
   border: 2px solid #ccc;
   background-color: white;
   position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .variable {
   width: 60px;
   height: 30px;
   background-color: #ffd54f;
-  border: 1px solid #333;
+  border: 2px solid #ff9800;
   text-align: center;
   line-height: 30px;
   position: absolute;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .operation {
   width: 80px;
   height: 40px;
   background-color: #90caf9;
-  border: 2px solid #333;
+  border: 2px solid #1976d2;
   text-align: center;
   line-height: 40px;
   position: absolute;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .pulse {
@@ -68,4 +87,6 @@ h1 {
   height: 10px;
   border-radius: 50%;
   position: absolute;
+  background-color: #ff0000;
+  box-shadow: 0 0 10px rgba(255,0,0,0.8);
 }
