@@ -1,1 +1,60 @@
-<input type="text" placeholder="Введіть формулу або клікайте кнопки..."/>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Симулятор логічних схем</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Симулятор логічних схем</h1>
+  </header>
+
+  <main>
+    <div id="controls">
+      <div class="input-group">
+        <input type="text" id="booleanInput" placeholder="Введіть формулу або клікайте кнопки...">
+        <button onclick="clearInput()" title="Очистити поле">✕</button>
+      </div>
+
+      <div class="button-grid">
+        <fieldset>
+          <legend>Змінні</legend>
+          <button onclick="insertSymbol('x')">X</button>
+          <button onclick="insertSymbol('y')">Y</button>
+          <button onclick="insertSymbol('z')">Z</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Операції</legend>
+          <button onclick="insertSymbol(' AND ')" title="Логічне І">І</button>
+          <button onclick="insertSymbol(' OR ')" title="Логічне АБО">АБО</button>
+          <button onclick="insertSymbol(' NOT ')" title="Логічне НЕ">НЕ</button>
+          <button onclick="insertSymbol(' XOR ')" title="Виключне АБО">⊕</button>
+          <button onclick="insertSymbol(' NAND ')" title="І-НЕ">І-НЕ</button>
+          <button onclick="insertSymbol(' NOR ')" title="АБО-НЕ">АБО-НЕ</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Символи</legend>
+          <button onclick="insertSymbol('(')">(</button>
+          <button onclick="insertSymbol(')')">)</button>
+        </fieldset>
+      </div>
+
+      <div class="actions">
+        <button class="btn-build" onclick="buildScheme()">Побудувати схему</button>
+        <button class="btn-run" onclick="runSimulation()">Запустити імпульс</button>
+      </div>
+    </div>
+
+    <div id="workspace">
+      <p class="placeholder-text">Тут з'явиться ваша схема...</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
