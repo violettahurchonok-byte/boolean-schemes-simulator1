@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Симулятор логічних схем</title>
+  <!-- Підключення стилів -->
   <link rel="stylesheet" href="style.css">
+  <!-- Підключення бібліотеки math.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
 </head>
 <body>
@@ -12,10 +14,12 @@
   <div id="controls">
     <input type="text" id="booleanInput" placeholder="Функція буде збиратись тут">
 
+    <!-- Змінні -->
     <button onclick="insertSymbol('x')">X</button>
     <button onclick="insertSymbol('y')">Y</button>
     <button onclick="insertSymbol('z')">Z</button>
 
+    <!-- Операції -->
     <button onclick="insertSymbol(' AND ')">І</button>
     <button onclick="insertSymbol(' OR ')">АБО</button>
     <button onclick="insertSymbol(' NOT ')">НЕ</button>
@@ -23,15 +27,19 @@
     <button onclick="insertSymbol(' NAND ')">І-НЕ (NAND)</button>
     <button onclick="insertSymbol(' NOR ')">АБО-НЕ (NOR)</button>
 
+    <!-- Дужки -->
     <button onclick="insertSymbol('(')">(</button>
     <button onclick="insertSymbol(')')">)</button>
 
+    <!-- Дії -->
     <button onclick="buildScheme()">Побудувати схему</button>
     <button onclick="runSimulation()">Запустити імпульс</button>
   </div>
 
+  <!-- Робоча область -->
   <div id="workspace"></div>
 
+  <!-- Підключення скриптів -->
   <script src="script.js"></script>
 </body>
 </html>
