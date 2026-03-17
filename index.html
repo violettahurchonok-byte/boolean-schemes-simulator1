@@ -2,44 +2,57 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Симулятор логічних схем</title>
-  <!-- Підключення стилів -->
   <link rel="stylesheet" href="style.css">
-  <!-- Підключення бібліотеки math.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
 </head>
 <body>
-  <h1>Симулятор логічних схем</h1>
+  <header>
+    <h1>Симулятор логічних схем</h1>
+  </header>
 
-  <div id="controls">
-    <input type="text" id="booleanInput" placeholder="Функція буде збиратись тут">
+  <main>
+    <div id="controls">
+      <div class="input-group">
+        <input type="text" id="booleanInput" placeholder="Формула з'явиться тут..." readonly>
+        <button onclick="clearInput()" title="Очистити поле">✕</button>
+      </div>
 
-    <!-- Змінні -->
-    <button onclick="insertSymbol('x')">X</button>
-    <button onclick="insertSymbol('y')">Y</button>
-    <button onclick="insertSymbol('z')">Z</button>
+      <div class="button-grid">
+        <fieldset>
+          <legend>Змінні</legend>
+          <button onclick="insertSymbol('x')">X</button>
+          <button onclick="insertSymbol('y')">Y</button>
+          <button onclick="insertSymbol('z')">Z</button>
+        </fieldset>
 
-    <!-- Операції -->
-    <button onclick="insertSymbol(' AND ')">І</button>
-    <button onclick="insertSymbol(' OR ')">АБО</button>
-    <button onclick="insertSymbol(' NOT ')">НЕ</button>
-    <button onclick="insertSymbol(' XOR ')">⊕ (XOR)</button>
-    <button onclick="insertSymbol(' NAND ')">І-НЕ (NAND)</button>
-    <button onclick="insertSymbol(' NOR ')">АБО-НЕ (NOR)</button>
+        <fieldset>
+          <legend>Операції</legend>
+          <button onclick="insertSymbol(' and ')" title="Логічне І">І</button>
+          <button onclick="insertSymbol(' or ')" title="Логічне АБО">АБО</button>
+          <button onclick="insertSymbol('not ')" title="Логічне НЕ">НЕ</button>
+          <button onclick="insertSymbol(' xor ')" title="Виключне АБО">⊕</button>
+        </fieldset>
 
-    <!-- Дужки -->
-    <button onclick="insertSymbol('(')">(</button>
-    <button onclick="insertSymbol(')')">)</button>
+        <fieldset>
+          <legend>Символи</legend>
+          <button onclick="insertSymbol('(')">(</button>
+          <button onclick="insertSymbol(')')">)</button>
+        </fieldset>
+      </div>
 
-    <!-- Дії -->
-    <button onclick="buildScheme()">Побудувати схему</button>
-    <button onclick="runSimulation()">Запустити імпульс</button>
-  </div>
+      <div class="actions">
+        <button class="btn-build" onclick="buildScheme()">Побудувати схему</button>
+        <button class="btn-run" onclick="runSimulation()">Запустити імпульс</button>
+      </div>
+    </div>
 
-  <!-- Робоча область -->
-  <div id="workspace"></div>
+    <div id="workspace">
+      <p class="placeholder-text">Тут з'явиться ваша схема...</p>
+    </div>
+  </main>
 
-  <!-- Підключення скриптів -->
   <script src="script.js"></script>
 </body>
 </html>
